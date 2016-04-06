@@ -35,7 +35,9 @@
 	* CoreFoundation
 5. 导入 `LYCategories.h`。
 
-
+文档
+==============
+你可以在 [CocoaDocs](http://cocoadocs.org/docsets/LYCategories) 查看在线 API 文档，也可以用 [appledoc](https://github.com/tomaz/appledoc) 本地生成文档。
 
 系统要求
 ==============
