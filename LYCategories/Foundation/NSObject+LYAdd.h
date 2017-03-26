@@ -10,6 +10,8 @@
 
 #import <objc/runtime.h>
 
+#pragma mark - AddProperty 动态添加属性
+
 // 动态Get方法
 #define categoryPropertyGet(property) return objc_getAssociatedObject(self,@#property);
 // 动态Set方法
@@ -61,19 +63,68 @@
  */
 - (id)ly_associatedValueForKey:(void *)key;
 
-#pragma mark - AddProperty 添加属性
+#pragma mark - Runtime
 ///=============================================================================
-/// @name AddProperty 添加属性
+/// @name Runtime
 ///=============================================================================
 
 /**
- *  @brief  catgory runtime实现get set方法增加一个字符串属性
+ Exchange methods' implementations.
+ 
+ @param originalMethod Method to exchange.
+ @param newMethod Method to exchange.
  */
-@property (nonatomic, strong) NSString *ly_stringProperty;
++ (void)ly_swizzleMethod:(SEL)originalMethod withMethod:(SEL)newMethod;
 
 /**
- *  @brief  catgory runtime实现get set方法增加一个NSInteger属性
+ Append a new method to an object.
+ 
+ @param newMethod Method to exchange.
+ @param klass Host class.
  */
-@property (nonatomic, assign) NSInteger ly_integerProperty;
++ (void)ly_appendMethod:(SEL)newMethod fromClass:(Class)klass;
+
+/**
+ Replace a method in an object.
+ 
+ @param method Method to exchange.
+ @param klass Host class.
+ */
++ (void)ly_replaceMethod:(SEL)method fromClass:(Class)klass;
+
+/**
+ Check whether the receiver implements or inherits a specified method up to and exluding a particular class in hierarchy.
+ 
+ @param selector A selector that identifies a method.
+ @param stopClass A final super class to stop quering (excluding it).
+ @return YES if one of super classes in hierarchy responds a specified selector.
+ */
+- (BOOL)ly_respondsToSelector:(SEL)selector untilClass:(Class)stopClass;
+
+/**
+ Check whether a superclass implements or inherits a specified method.
+ 
+ @param selector A selector that identifies a method.
+ @return YES if one of super classes in hierarchy responds a specified selector.
+ */
+- (BOOL)ly_superRespondsToSelector:(SEL)selector;
+
+/**
+ Check whether a superclass implements or inherits a specified method.
+ 
+ @param selector A selector that identifies a method.
+ @param stopClass A final super class to stop quering (excluding it).
+ @return YES if one of super classes in hierarchy responds a specified selector.
+ */
+- (BOOL)ly_superRespondsToSelector:(SEL)selector untilClass:(Class)stopClass;
+
+/**
+ Check whether the receiver's instances implement or inherit a specified method up to and exluding a particular class in hierarchy.
+ 
+ @param selector A selector that identifies a method.
+ @param stopClass A final super class to stop quering (excluding it).
+ @return YES if one of super classes in hierarchy responds a specified selector.
+ */
++ (BOOL)ly_instancesRespondToSelector:(SEL)selector untilClass:(Class)stopClass;
 
 @end

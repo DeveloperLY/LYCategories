@@ -11,12 +11,86 @@
 
 LYSYNTH_DUMMY_CLASS(NSObject_LYAdd)
 
-/** 
- *  objc_getAssociatedObject和objc_setAssociatedObject都需要指定一个固定的地址，
- *  这个固定的地址值用来表示属性的key，起到一个常量的作用。
- */
-static const void *LYStringProperty = &LYStringProperty;
-static const void *LYIntegerProperty = &LYIntegerProperty;
+#pragma mark - Runtime
+BOOL ly_method_swizzle(Class klass, SEL origSel, SEL altSel) {
+    if (!klass)
+        return NO;
+    
+    Method __block origMethod, __block altMethod;
+    
+    void (^find_methods)() = ^ {
+        unsigned methodCount = 0;
+        Method *methodList = class_copyMethodList(klass, &methodCount);
+        
+        origMethod = altMethod = NULL;
+        
+        if (methodList)
+            for (unsigned i = 0; i < methodCount; ++i) {
+                if (method_getName(methodList[i]) == origSel)
+                    origMethod = methodList[i];
+                
+                if (method_getName(methodList[i]) == altSel)
+                    altMethod = methodList[i];
+            }
+        
+        free(methodList);
+    };
+    
+    find_methods();
+    
+    if (!origMethod) {
+        origMethod = class_getInstanceMethod(klass, origSel);
+        
+        if (!origMethod)
+            return NO;
+        
+        if (!class_addMethod(klass, method_getName(origMethod), method_getImplementation(origMethod), method_getTypeEncoding(origMethod)))
+            return NO;
+    }
+    
+    if (!altMethod) {
+        altMethod = class_getInstanceMethod(klass, altSel);
+        
+        if (!altMethod)
+            return NO;
+        
+        if (!class_addMethod(klass, method_getName(altMethod), method_getImplementation(altMethod), method_getTypeEncoding(altMethod)))
+            return NO;
+    }
+    
+    find_methods();
+    
+    if (!origMethod || !altMethod)
+        return NO;
+    
+    method_exchangeImplementations(origMethod, altMethod);
+    
+    return YES;
+}
+
+void ly_method_append(Class toClass, Class fromClass, SEL selector) {
+    if (!toClass || !fromClass || !selector)
+        return;
+    
+    Method method = class_getInstanceMethod(fromClass, selector);
+    
+    if (!method)
+        return;
+    
+    class_addMethod(toClass, method_getName(method), method_getImplementation(method), method_getTypeEncoding(method));
+}
+
+void ly_method_replace(Class toClass, Class fromClass, SEL selector) {
+    if (!toClass || !fromClass || ! selector)
+        return;
+    
+    Method method = class_getInstanceMethod(fromClass, selector);
+    
+    if (!method)
+        return;
+    
+    class_replaceMethod(toClass, method_getName(method), method_getImplementation(method), method_getTypeEncoding(method));
+}
 
 @implementation NSObject (LYAdd)
 
@@ -69,38 +143,54 @@ static const void *LYIntegerProperty = &LYIntegerProperty;
     return objc_getAssociatedObject(self, key);
 }
 
-#pragma mark - AddProperty 添加属性
-@dynamic ly_stringProperty;
-@dynamic ly_integerProperty;
+#pragma mark - Runtime
 
-//set
-/**
- *  @brief  catgory runtime实现get set方法增加一个字符串属性
- */
-- (void)setLy_stringProperty:(NSString *)ly_stringProperty {
-    //use that a static const as the key
-    objc_setAssociatedObject(self, LYStringProperty, ly_stringProperty, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    //use that property's selector as the key:
-    //objc_setAssociatedObject(self, @selector(stringProperty), stringProperty, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
++ (void)ly_swizzleMethod:(SEL)originalMethod withMethod:(SEL)newMethod {
+    ly_method_swizzle(self.class, originalMethod, newMethod);
 }
 
-//get
-- (NSString *)ly_stringProperty {
-    return objc_getAssociatedObject(self, LYStringProperty);
++ (void)ly_appendMethod:(SEL)newMethod fromClass:(Class)klass {
+    ly_method_append(self.class, klass, newMethod);
 }
 
-//set
-/**
- *  @brief  catgory runtime实现get set方法增加一个NSInteger属性
- */
-- (void)setLy_integerProperty:(NSInteger)ly_integerProperty {
-    NSNumber *number = [[NSNumber alloc]initWithInteger:ly_integerProperty];
-    objc_setAssociatedObject(self,LYIntegerProperty, number, OBJC_ASSOCIATION_ASSIGN);
++ (void)ly_replaceMethod:(SEL)method fromClass:(Class)klass {
+    ly_method_replace(self.class, klass, method);
 }
 
-//get
-- (NSInteger)ly_integerProperty {
-    return [objc_getAssociatedObject(self, LYIntegerProperty) integerValue];
+- (BOOL)ly_respondsToSelector:(SEL)selector untilClass:(Class)stopClass {
+    return [self.class ly_instancesRespondToSelector:selector untilClass:stopClass];
+}
+
+- (BOOL)ly_superRespondsToSelector:(SEL)selector {
+    return [self.superclass instancesRespondToSelector:selector];
+}
+
+- (BOOL)ly_superRespondsToSelector:(SEL)selector untilClass:(Class)stopClass {
+    return [self.superclass ly_instancesRespondToSelector:selector untilClass:stopClass];
+}
+
++ (BOOL)ly_instancesRespondToSelector:(SEL)selector untilClass:(Class)stopClass {
+    BOOL __block (^ __weak block_self)(Class klass, SEL selector, Class stopClass);
+    BOOL (^block)(Class klass, SEL selector, Class stopClass) = [^
+                                                                 (Class klass, SEL selector, Class stopClass)
+                                                                 {
+                                                                     if (!klass || klass == stopClass)
+                                                                         return NO;
+                                                                     
+                                                                     unsigned methodCount = 0;
+                                                                     Method *methodList = class_copyMethodList(klass, &methodCount);
+                                                                     
+                                                                     if (methodList)
+                                                                         for (unsigned i = 0; i < methodCount; ++i)
+                                                                             if (method_getName(methodList[i]) == selector)
+                                                                                 return YES;
+                                                                     
+                                                                     return block_self(klass.superclass, selector, stopClass);
+                                                                 } copy];
+    
+    block_self = block;
+    
+    return block(self.class, selector, stopClass);
 }
 
 @end
