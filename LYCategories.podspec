@@ -3,12 +3,12 @@ s.name         = 'LYCategories'
 s.summary      = 'A set of useful categories for Foundation and UIKit.'
 s.version      = '0.8.9'
 s.license      = { :type => 'MIT', :file => 'LICENSE' }
-s.authors      = { 'CoderYLiu' => 'coderyliu@gmail.com' }
-s.social_media_url = 'http://www.jianshu.com/users/455a0339b2c3/latest_articles'
-s.homepage     = 'https://github.com/CoderYLiu/LYCategories'
+s.authors      = { 'DeveloperLY' => 'coderyliu@gmail.com' }
+s.social_media_url = 'http://www.developerly.net'
+s.homepage     = 'https://github.com/DeveloperLY/LYCategories'
 s.platform     = :ios, '6.0'
 s.ios.deployment_target = '6.0'
-s.source       = { :git => 'https://github.com/CoderYLiu/LYCategories.git', :tag => s.version.to_s }
+s.source       = { :git => 'https://github.com/DeveloperLY/LYCategories.git', :tag => s.version.to_s }
 
 s.requires_arc = true
 s.source_files = 'LYCategories/**/*.{h,m}'
