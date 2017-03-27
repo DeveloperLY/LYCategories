@@ -10,7 +10,7 @@
 
 @interface NSData (LYAdd)
 
-#pragma mark - 加密
+#pragma mark - Hash
 /**
  *  md5加密
  *
@@ -46,6 +46,8 @@
  */
 - (NSString *)sha512;
 
+#pragma mark - Base64
+
 /**
  *  base64加密
  *
@@ -77,5 +79,43 @@
  *  @return 得到解密后的字符串
  */
 - (NSString *)decryptWithKey:(NSString *)key;
+
+#pragma mark - Gzip
+
+/**
+ *  @brief  GZIP压缩
+ *
+ *  @param level 压缩级别
+ *
+ *  @return 压缩后的数据
+ */
+- (NSData *)ly_gzippedDataWithCompressionLevel:(float)level;
+
+/**
+ *  @brief  GZIP压缩 压缩级别 默认-1
+ *
+ *  @return 压缩后的数据
+ */
+- (NSData *)ly_gzippedData;
+
+/**
+ *  @brief  GZIP解压
+ *
+ *  @return 解压后数据
+ */
+- (NSData *)ly_gunzippedData;
+
+/**
+ *  @return 是否压缩成功
+ */
+- (BOOL)ly_isGzippedData;
+
+#pragma mark - APNSToken
+/**
+ *  @brief  将APNS NSData类型token 格式化成字符串
+ *
+ *  @return 整理过后的字符串token
+ */
+- (NSString *)ly_APNSTokenDataToString;
 
 @end
