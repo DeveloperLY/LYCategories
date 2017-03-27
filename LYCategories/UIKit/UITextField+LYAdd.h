@@ -10,21 +10,25 @@
 
 @interface UITextField (LYAdd)
 
+#pragma mark - Select
+
 /**
  *  设置选定的所有文本。
  */
 - (void)selectAllText;
 
 /**
- Set text in range selected.
- 
- @param range  The range of selected text in a document.
- */
-/**
  *  设置选定范围内的文本
  *
  *  @param @range 文档中选定文本的范围
  */
 - (void)setSelectedRange:(NSRange)range;
+
+/**
+ *  @brief  当前选中的字符串范围
+ *
+ *  @return NSRange
+ */
+- (NSRange)ly_selectedRange;
 
 @end
