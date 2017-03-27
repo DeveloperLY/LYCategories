@@ -9,7 +9,7 @@
 #import "NSRunLoop+LYAdd.h"
 #import "LYCategoriesMacro.h"
 
-LYSYNTH_DUMMY_CLASS(NSData_LYAdd)
+LYSYNTH_DUMMY_CLASS(NSRunLoop_LYAdd)
 
 NSString * const NSRunloopTimeoutException = @"NSRunloopTimeoutException";
 
