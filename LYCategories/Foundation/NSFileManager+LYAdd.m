@@ -85,7 +85,7 @@ LYSYNTH_DUMMY_CLASS(NSFileManager_LYAdd)
             return YES;
         }
         if ([attributes isKindOfClass:[NSDictionary class]] && attributes) {
-            //  NSLog(@"%@", attributes);
+//            NSLog(@"%@", attributes);
             NSString *createDate = [attributes objectForKey:@"NSFileModificationDate"];
             createDate = [NSString stringWithFormat:@"%@", createDate];
             if (createDate.length >= 19) {
@@ -102,5 +102,13 @@ LYSYNTH_DUMMY_CLASS(NSFileManager_LYAdd)
     return YES;
 }
 
++ (BOOL)ly_addSkipBackupAttributeToFile:(NSString *)path {
+    return [[NSURL.alloc initFileURLWithPath:path] setResourceValue:@(YES) forKey:NSURLIsExcludedFromBackupKey error:nil];
+}
+
++ (double)ly_availableDiskSpace {
+    NSDictionary *attributes = [self.defaultManager attributesOfFileSystemForPath:self.documentsPath error:nil];
+    return [attributes[NSFileSystemFreeSize] unsignedLongLongValue] / (double)0x100000;
+}
 
 @end

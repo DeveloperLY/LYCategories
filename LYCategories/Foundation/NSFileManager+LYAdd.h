@@ -99,4 +99,19 @@
  */
 - (BOOL)isFile:(NSString *)filePath timeout:(NSTimeInterval)timeout;
 
+
+/**
+ Adds a special filesystem flag to a file to avoid iCloud backup it.
+ 
+ @param path Path to a file to set an attribute.
+ */
++ (BOOL)ly_addSkipBackupAttributeToFile:(NSString *)path;
+
+/**
+ Get available disk space.
+ 
+ @return An amount of available disk space in Megabytes.
+ */
++ (double)ly_availableDiskSpace;
+
 @end
