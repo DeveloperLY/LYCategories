@@ -35,6 +35,9 @@ FOUNDATION_EXPORT const unsigned char YYCategoriesVersionString[];
 #import <LYCategories/CALayer+LYAdd.h>
 #import <LYCategories/GTMBase64.h>
 #import <LYCategories/GTMDefines.h>
+#import <LYCategories/NSURLSession+LYAdd.h>
+#import <LYCategories/NSRunLoop+LYAdd.h>
+#import <LYCategories/NSHTTPCookieStorage+LYAdd.h>
 #else
 #import "LYCategoriesMacro.h"
 #import "NSObject+LYAdd.h"
@@ -57,4 +60,7 @@ FOUNDATION_EXPORT const unsigned char YYCategoriesVersionString[];
 #import "CALayer+LYAdd.h"
 #import "GTMBase64.h"
 #import "GTMDefines.h"
+#import "NSURLSession+LYAdd.h"
+#import "NSRunLoop+LYAdd.h"
+#import "NSHTTPCookieStorage+LYAdd.h"
 #endif
