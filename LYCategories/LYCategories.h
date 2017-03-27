@@ -39,6 +39,7 @@ FOUNDATION_EXPORT const unsigned char YYCategoriesVersionString[];
 #import <LYCategories/NSRunLoop+LYAdd.h>
 #import <LYCategories/NSHTTPCookieStorage+LYAdd.h>
 #import <LYCategories/NSNotificationCenter+LYAdd.h>
+#import <LYCategories/NSUserDefaults+LYAdd.h>
 #else
 #import "LYCategoriesMacro.h"
 #import "NSObject+LYAdd.h"
@@ -65,4 +66,5 @@ FOUNDATION_EXPORT const unsigned char YYCategoriesVersionString[];
 #import "NSRunLoop+LYAdd.h"
 #import "NSHTTPCookieStorage+LYAdd.h"
 #import "NSNotificationCenter+LYAdd.h"
+#import "NSUserDefaults+LYAdd.h"
 #endif
