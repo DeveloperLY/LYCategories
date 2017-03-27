@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 s.name         = 'LYCategories'
 s.summary      = 'A set of useful categories for Foundation and UIKit.'
-s.version      = '0.8.9'
+s.version      = '0.9.0'
 s.license      = { :type => 'MIT', :file => 'LICENSE' }
 s.authors      = { 'DeveloperLY' => 'coderyliu@gmail.com' }
 s.social_media_url = 'http://www.developerly.net'
