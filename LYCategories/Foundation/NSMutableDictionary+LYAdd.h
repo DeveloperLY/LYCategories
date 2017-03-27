@@ -63,7 +63,7 @@
 /**
  *  设置key——value CGFloat
  *
- *  @param i   CGFloat
+ *  @param f   CGFloat
  *  @param key key
  */
 - (void)setCGFloat:(CGFloat)f forKey:(NSString *)key;
@@ -71,7 +71,7 @@
 /**
  *  设置key——value Char
  *
- *  @param i   Char
+ *  @param c   Char
  *  @param key key
  */
 - (void)setChar:(char)c forKey:(NSString *)key;
@@ -103,7 +103,7 @@
 /**
  *  设置key——value Point
  *
- *  @param i   Point
+ *  @param o   Point
  *  @param key key
  */
 - (void)setPoint:(CGPoint)o forKey:(NSString *)key;
@@ -111,7 +111,7 @@
 /**
  *  设置key——value Size
  *
- *  @param i   Size
+ *  @param o   Size
  *  @param key key
  */
 - (void)setSize:(CGSize)o forKey:(NSString *)key;
@@ -119,7 +119,7 @@
 /**
  *  设置key——value Rect
  *
- *  @param i   Rect
+ *  @param o   Rect
  *  @param key key
  */
 - (void)setRect:(CGRect)o forKey:(NSString *)key;

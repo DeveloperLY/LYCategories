@@ -113,14 +113,14 @@
 /**
  *  添加CGFloat
  *
- *  @param i 添加的CGFloat
+ *  @param f 添加的CGFloat
  */
 - (void)addCGFloat:(CGFloat)f;
 
 /**
  *  添加Char
  *
- *  @param i 添加的Char
+ *  @param c 添加的Char
  */
 - (void)addChar:(char)c;
 
@@ -134,21 +134,21 @@
 /**
  *  添加Point
  *
- *  @param i 添加的Point
+ *  @param o 添加的Point
  */
 - (void)addPoint:(CGPoint)o;
 
 /**
  *  添加Size
  *
- *  @param i 添加的Size
+ *  @param o 添加的Size
  */
 - (void)addSize:(CGSize)o;
 
 /**
  *  添加Rect
  *
- *  @param i 添加的Rect
+ *  @param o 添加的Rect
  */
 - (void)addRect:(CGRect)o;
 

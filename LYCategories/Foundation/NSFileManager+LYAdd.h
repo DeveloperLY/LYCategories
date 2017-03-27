@@ -18,8 +18,6 @@
 /**
  *  获取URL
  *
- *  @param directory 指定的directory
- *
  *  @return 得到的URL
  */
 + (NSURL *)documentsURL;
@@ -84,7 +82,7 @@
 /**
  * @brief 判断文件是否存在于沙盒中
  *
- * @param fileName 文件路径名
+ * @param filePath 文件路径名
  *
  * @return 返回YES表示存在，返回NO表示不存在
  */

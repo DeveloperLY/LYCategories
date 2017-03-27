@@ -23,7 +23,7 @@
 /**
  *  设置选定范围内的文本
  *
- *  @param range 文档中选定文本的范围
+ *  @param @range 文档中选定文本的范围
  */
 - (void)setSelectedRange:(NSRange)range;
 
