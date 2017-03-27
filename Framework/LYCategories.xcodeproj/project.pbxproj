@@ -33,6 +33,8 @@
 		CDC2756F1E8900A700CBEAFB /* NSURLSession+LYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC2756D1E8900A700CBEAFB /* NSURLSession+LYAdd.m */; };
 		CDC275721E8902D500CBEAFB /* NSRunLoop+LYAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = CDC275701E8902D500CBEAFB /* NSRunLoop+LYAdd.h */; };
 		CDC275731E8902D500CBEAFB /* NSRunLoop+LYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC275711E8902D500CBEAFB /* NSRunLoop+LYAdd.m */; };
+		CDC275761E89043F00CBEAFB /* NSHTTPCookieStorage+LYAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = CDC275741E89043F00CBEAFB /* NSHTTPCookieStorage+LYAdd.h */; };
+		CDC275771E89043F00CBEAFB /* NSHTTPCookieStorage+LYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC275751E89043F00CBEAFB /* NSHTTPCookieStorage+LYAdd.m */; };
 		CDE86B841CB0FD280093648E /* NSMutableString+LYAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE86B821CB0FD280093648E /* NSMutableString+LYAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDE86B851CB0FD280093648E /* NSMutableString+LYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE86B831CB0FD280093648E /* NSMutableString+LYAdd.m */; };
 		CDE86B881CB0FE150093648E /* NSFileManager+LYAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE86B861CB0FE150093648E /* NSFileManager+LYAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -88,6 +90,8 @@
 		CDC2756D1E8900A700CBEAFB /* NSURLSession+LYAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSession+LYAdd.m"; sourceTree = "<group>"; };
 		CDC275701E8902D500CBEAFB /* NSRunLoop+LYAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSRunLoop+LYAdd.h"; sourceTree = "<group>"; };
 		CDC275711E8902D500CBEAFB /* NSRunLoop+LYAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSRunLoop+LYAdd.m"; sourceTree = "<group>"; };
+		CDC275741E89043F00CBEAFB /* NSHTTPCookieStorage+LYAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSHTTPCookieStorage+LYAdd.h"; sourceTree = "<group>"; };
+		CDC275751E89043F00CBEAFB /* NSHTTPCookieStorage+LYAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSHTTPCookieStorage+LYAdd.m"; sourceTree = "<group>"; };
 		CDE86B821CB0FD280093648E /* NSMutableString+LYAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+LYAdd.h"; sourceTree = "<group>"; };
 		CDE86B831CB0FD280093648E /* NSMutableString+LYAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+LYAdd.m"; sourceTree = "<group>"; };
 		CDE86B861CB0FE150093648E /* NSFileManager+LYAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+LYAdd.h"; sourceTree = "<group>"; };
@@ -208,6 +212,8 @@
 				CDC2756D1E8900A700CBEAFB /* NSURLSession+LYAdd.m */,
 				CDC275701E8902D500CBEAFB /* NSRunLoop+LYAdd.h */,
 				CDC275711E8902D500CBEAFB /* NSRunLoop+LYAdd.m */,
+				CDC275741E89043F00CBEAFB /* NSHTTPCookieStorage+LYAdd.h */,
+				CDC275751E89043F00CBEAFB /* NSHTTPCookieStorage+LYAdd.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -267,6 +273,7 @@
 				CDA316AE1CB0274200DD74CC /* UIColor+LYAdd.h in Headers */,
 				CDC275721E8902D500CBEAFB /* NSRunLoop+LYAdd.h in Headers */,
 				CDA316AA1CB025D500DD74CC /* UIImage+LYAdd.h in Headers */,
+				CDC275761E89043F00CBEAFB /* NSHTTPCookieStorage+LYAdd.h in Headers */,
 				CDA316B61CB02EA100DD74CC /* UIView+LYAdd.h in Headers */,
 				CDE86B841CB0FD280093648E /* NSMutableString+LYAdd.h in Headers */,
 				CDE86B901CB1122D0093648E /* NSBundle+LYAdd.h in Headers */,
@@ -354,6 +361,7 @@
 				CDC275731E8902D500CBEAFB /* NSRunLoop+LYAdd.m in Sources */,
 				CDA316A31CB022BD00DD74CC /* NSString+LYAdd.m in Sources */,
 				CDA316B71CB02EA100DD74CC /* UIView+LYAdd.m in Sources */,
+				CDC275771E89043F00CBEAFB /* NSHTTPCookieStorage+LYAdd.m in Sources */,
 				CDE86BAB1CB130AC0093648E /* NSData+LYAdd.m in Sources */,
 				CDA316A71CB0233F00DD74CC /* NSMutableURLRequest+LYAdd.m in Sources */,
 				CDE86B851CB0FD280093648E /* NSMutableString+LYAdd.m in Sources */,
