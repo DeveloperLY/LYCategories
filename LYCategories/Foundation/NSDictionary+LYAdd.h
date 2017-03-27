@@ -234,4 +234,66 @@
 ///=============================================================================
 - (NSString *)JSONString;
 
+#pragma mark - URL
+///=============================================================================
+/// @name URL
+///=============================================================================
+/**
+ *  @brief  将url参数转换成NSDictionary
+ *
+ *  @param query url参数
+ *
+ *  @return NSDictionary
+ */
++ (NSDictionary *)ly_dictionaryWithURLQuery:(NSString *)query;
+
+/**
+ *  @brief  将NSDictionary转换成url 参数字符串
+ *
+ *  @return url 参数字符串
+ */
+- (NSString *)ly_URLQueryString;
+
+#pragma mark - XML
+///=============================================================================
+/// @name XML
+///=============================================================================
+/**
+ *  @brief  将NSDictionary转换成XML字符串 不带XML声明 不带根节点
+ *
+ *  @return XML 字符串
+ */
+- (NSString *)ly_XMLString;
+/**
+ *  @brief  将NSDictionary转换成XML字符串, 默认 <?xml version=\"1.0\" encoding=\"utf-8\"?> 声明   自定义根节点
+ *
+ *  @param rootElement 根节点
+ *
+ *  @return XML 字符串
+ */
+- (NSString *)ly_XMLStringDefaultDeclarationWithRootElement:(NSString*)rootElement;
+/**
+ *  @brief  将NSDictionary转换成XML字符串, 自定义根节点  自定义xml声明
+ *
+ *  @param rootElement 根节点
+ *
+ *  @param declaration xml声明
+ *
+ *  @return 标准合法 XML 字符串
+ */
+- (NSString *)ly_XMLStringWithRootElement:(NSString*)rootElement declaration:(NSString*)declaration;
+/**
+ *  @brief  将NSDictionary转换成Plist字符串
+ *
+ *  @return Plist 字符串
+ */
+- (NSString *)ly_plistString;
+/**
+ *  @brief  将NSDictionary转换成Plist data
+ *
+ *  @return Plist data
+ */
+- (NSData *)ly_plistData;
+
+
 @end
