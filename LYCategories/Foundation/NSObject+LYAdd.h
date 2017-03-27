@@ -27,7 +27,7 @@
 /**
  *  @brief消息发送选择器
  *
- *  @param sel 变量参数列表
+ *  @param aSelector 变量参数列表
  *
  *  @return 消息结果
  */

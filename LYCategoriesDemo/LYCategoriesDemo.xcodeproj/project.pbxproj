@@ -33,6 +33,7 @@
 		CD3D8B741E881DAA00738C78 /* UIImage+LYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3D8B601E881DAA00738C78 /* UIImage+LYAdd.m */; };
 		CD3D8B751E881DAA00738C78 /* UITextField+LYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3D8B621E881DAA00738C78 /* UITextField+LYAdd.m */; };
 		CD3D8B761E881DAA00738C78 /* UIView+LYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3D8B641E881DAA00738C78 /* UIView+LYAdd.m */; };
+		CDC2756B1E88F2F300CBEAFB /* LYNSObjectDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC2756A1E88F2F300CBEAFB /* LYNSObjectDemoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,8 @@
 		CD3D8B621E881DAA00738C78 /* UITextField+LYAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+LYAdd.m"; sourceTree = "<group>"; };
 		CD3D8B631E881DAA00738C78 /* UIView+LYAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LYAdd.h"; sourceTree = "<group>"; };
 		CD3D8B641E881DAA00738C78 /* UIView+LYAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LYAdd.m"; sourceTree = "<group>"; };
+		CDC275691E88F2F300CBEAFB /* LYNSObjectDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYNSObjectDemoViewController.h; sourceTree = "<group>"; };
+		CDC2756A1E88F2F300CBEAFB /* LYNSObjectDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYNSObjectDemoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +141,7 @@
 		CD3D8AFA1E881D5200738C78 = {
 			isa = PBXGroup;
 			children = (
+				CD3D8B391E881DAA00738C78 /* LYCategories */,
 				CD3D8B051E881D5200738C78 /* LYCategoriesDemo */,
 				CD3D8B1F1E881D5200738C78 /* LYCategoriesDemoTests */,
 				CD3D8B2A1E881D5200738C78 /* LYCategoriesDemoUITests */,
@@ -158,15 +162,9 @@
 		CD3D8B051E881D5200738C78 /* LYCategoriesDemo */ = {
 			isa = PBXGroup;
 			children = (
-				CD3D8B391E881DAA00738C78 /* LYCategories */,
-				CD3D8B091E881D5200738C78 /* AppDelegate.h */,
-				CD3D8B0A1E881D5200738C78 /* AppDelegate.m */,
-				CD3D8B0C1E881D5200738C78 /* ViewController.h */,
-				CD3D8B0D1E881D5200738C78 /* ViewController.m */,
-				CD3D8B0F1E881D5200738C78 /* Main.storyboard */,
-				CD3D8B121E881D5200738C78 /* Assets.xcassets */,
-				CD3D8B141E881D5200738C78 /* LaunchScreen.storyboard */,
-				CD3D8B171E881D5200738C78 /* Info.plist */,
+				CDC275681E88F20A00CBEAFB /* Demos */,
+				CDC275671E88F1EC00CBEAFB /* Controller */,
+				CDC275661E88F14800CBEAFB /* AppDelegate */,
 				CD3D8B061E881D5200738C78 /* Supporting Files */,
 			);
 			path = LYCategoriesDemo;
@@ -175,6 +173,9 @@
 		CD3D8B061E881D5200738C78 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CD3D8B121E881D5200738C78 /* Assets.xcassets */,
+				CD3D8B141E881D5200738C78 /* LaunchScreen.storyboard */,
+				CD3D8B171E881D5200738C78 /* Info.plist */,
 				CD3D8B071E881D5200738C78 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -209,7 +210,7 @@
 				CD3D8B5C1E881DAA00738C78 /* UIKit */,
 			);
 			name = LYCategories;
-			path = ../../LYCategories;
+			path = ../LYCategories;
 			sourceTree = "<group>";
 		};
 		CD3D8B3A1E881DAA00738C78 /* Foundation */ = {
@@ -275,6 +276,34 @@
 				CD3D8B641E881DAA00738C78 /* UIView+LYAdd.m */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		CDC275661E88F14800CBEAFB /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				CD3D8B091E881D5200738C78 /* AppDelegate.h */,
+				CD3D8B0A1E881D5200738C78 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		CDC275671E88F1EC00CBEAFB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CD3D8B0C1E881D5200738C78 /* ViewController.h */,
+				CD3D8B0D1E881D5200738C78 /* ViewController.m */,
+				CD3D8B0F1E881D5200738C78 /* Main.storyboard */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		CDC275681E88F20A00CBEAFB /* Demos */ = {
+			isa = PBXGroup;
+			children = (
+				CDC275691E88F2F300CBEAFB /* LYNSObjectDemoViewController.h */,
+				CDC2756A1E88F2F300CBEAFB /* LYNSObjectDemoViewController.m */,
+			);
+			name = Demos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,6 +450,7 @@
 				CD3D8B731E881DAA00738C78 /* UIColor+LYAdd.m in Sources */,
 				CD3D8B0B1E881D5200738C78 /* AppDelegate.m in Sources */,
 				CD3D8B681E881DAA00738C78 /* NSDate+LYAdd.m in Sources */,
+				CDC2756B1E88F2F300CBEAFB /* LYNSObjectDemoViewController.m in Sources */,
 				CD3D8B081E881D5200738C78 /* main.m in Sources */,
 				CD3D8B651E881DAA00738C78 /* NSArray+LYAdd.m in Sources */,
 				CD3D8B6C1E881DAA00738C78 /* NSMutableDictionary+LYAdd.m in Sources */,
