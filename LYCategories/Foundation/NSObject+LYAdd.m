@@ -7,6 +7,7 @@
 //
 
 #import "NSObject+LYAdd.h"
+#import <objc/runtime.h>
 #import "LYCategoriesMacro.h"
 
 LYSYNTH_DUMMY_CLASS(NSObject_LYAdd)

@@ -8,15 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import <objc/runtime.h>
-
-#pragma mark - AddProperty 动态添加属性
-
-// 动态Get方法
-#define categoryPropertyGet(property) return objc_getAssociatedObject(self,@#property);
-// 动态Set方法
-#define categoryPropertySet(property) objc_setAssociatedObject(self,@#property, property, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-
 @interface NSObject (LYAdd)
 
 #pragma mark - NSInvocation封装
