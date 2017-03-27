@@ -35,4 +35,9 @@
  */
 + (UIColor *)colorWithHexString:(NSString *)color alpha:(CGFloat)alpha;
 
+/**
+ *  @return 该颜色的16进制
+ */
+- (NSString *)ly_HEXString;
+
 @end
