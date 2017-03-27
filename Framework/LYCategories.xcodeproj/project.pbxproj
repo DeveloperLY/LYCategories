@@ -29,6 +29,8 @@
 		CDA316B31CB02B9F00DD74CC /* CALayer+LYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA316B11CB02B9F00DD74CC /* CALayer+LYAdd.m */; };
 		CDA316B61CB02EA100DD74CC /* UIView+LYAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = CDA316B41CB02EA100DD74CC /* UIView+LYAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDA316B71CB02EA100DD74CC /* UIView+LYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA316B51CB02EA100DD74CC /* UIView+LYAdd.m */; };
+		CDC2756E1E8900A700CBEAFB /* NSURLSession+LYAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = CDC2756C1E8900A700CBEAFB /* NSURLSession+LYAdd.h */; };
+		CDC2756F1E8900A700CBEAFB /* NSURLSession+LYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC2756D1E8900A700CBEAFB /* NSURLSession+LYAdd.m */; };
 		CDE86B841CB0FD280093648E /* NSMutableString+LYAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE86B821CB0FD280093648E /* NSMutableString+LYAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDE86B851CB0FD280093648E /* NSMutableString+LYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE86B831CB0FD280093648E /* NSMutableString+LYAdd.m */; };
 		CDE86B881CB0FE150093648E /* NSFileManager+LYAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE86B861CB0FE150093648E /* NSFileManager+LYAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -80,6 +82,8 @@
 		CDA316B11CB02B9F00DD74CC /* CALayer+LYAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+LYAdd.m"; sourceTree = "<group>"; };
 		CDA316B41CB02EA100DD74CC /* UIView+LYAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LYAdd.h"; sourceTree = "<group>"; };
 		CDA316B51CB02EA100DD74CC /* UIView+LYAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LYAdd.m"; sourceTree = "<group>"; };
+		CDC2756C1E8900A700CBEAFB /* NSURLSession+LYAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSession+LYAdd.h"; sourceTree = "<group>"; };
+		CDC2756D1E8900A700CBEAFB /* NSURLSession+LYAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSession+LYAdd.m"; sourceTree = "<group>"; };
 		CDE86B821CB0FD280093648E /* NSMutableString+LYAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+LYAdd.h"; sourceTree = "<group>"; };
 		CDE86B831CB0FD280093648E /* NSMutableString+LYAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+LYAdd.m"; sourceTree = "<group>"; };
 		CDE86B861CB0FE150093648E /* NSFileManager+LYAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+LYAdd.h"; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 				CDE86B9F1CB11CEC0093648E /* NSArray+LYAdd.m */,
 				CDE86BA81CB130AC0093648E /* NSData+LYAdd.h */,
 				CDE86BA91CB130AC0093648E /* NSData+LYAdd.m */,
+				CDC2756C1E8900A700CBEAFB /* NSURLSession+LYAdd.h */,
+				CDC2756D1E8900A700CBEAFB /* NSURLSession+LYAdd.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -259,6 +265,7 @@
 				CDE86B901CB1122D0093648E /* NSBundle+LYAdd.h in Headers */,
 				CDE86BA01CB11CEC0093648E /* NSArray+LYAdd.h in Headers */,
 				CDE86BF11CB1450D0093648E /* UITextField+LYAdd.h in Headers */,
+				CDC2756E1E8900A700CBEAFB /* NSURLSession+LYAdd.h in Headers */,
 				CDA3169E1CB01D4D00DD74CC /* NSObject+LYAdd.h in Headers */,
 				CDA3167A1CAFED2B00DD74CC /* LYCategories.h in Headers */,
 			);
@@ -345,6 +352,7 @@
 				CDE86B911CB1122D0093648E /* NSBundle+LYAdd.m in Sources */,
 				CDE86B951CB112F10093648E /* NSMutableDictionary+LYAdd.m in Sources */,
 				CDE86BF21CB1450D0093648E /* UITextField+LYAdd.m in Sources */,
+				CDC2756F1E8900A700CBEAFB /* NSURLSession+LYAdd.m in Sources */,
 				CDE86B9D1CB119EB0093648E /* NSMutableArray+LYAdd.m in Sources */,
 				CDA3169F1CB01D4D00DD74CC /* NSObject+LYAdd.m in Sources */,
 				CDE86BB11CB131E10093648E /* GTMBase64.m in Sources */,
